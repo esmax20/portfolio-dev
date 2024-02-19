@@ -1,0 +1,49 @@
+---
+import PythonIcon from './icons/Python.astro'
+const TAGS = {
+    Python: {
+        name: "Python",
+        class: "bg-black text-white",
+        icon: PythonIcon,
+    },
+}
+const PROJECTS = [
+    {
+        title: 'Sistema Automatizado de Acceso a Estacionamiento',
+        description: `Realizado como proyecto de grado para la carrera de 
+            Ingenieria en Informatica, es una aplicación de escritorio pensada para monitorear
+            el acceso a una playa de estacionamiento, con la cual reconociendo
+            una cámara conectada al computador (o simulacion de cámara) puede detectar la patente
+            de los vehículos, registrar si es un ingreso o egreso, calcular tiempo de estadía y monto a cobrar.`,
+        link: '',
+        github: 'https://github.com/esmax20/Reconocedor-de-Patentes',
+        image: 'Reconocimineto-AB123CD.jpg',
+        tags: [TAGS.Python]
+    }
+]
+---
+
+{
+    PROJECTS.map(({ title, description, image, tags }) => (
+        <article>
+            <h3 class="text-2xl font-semibold mb-2">{ title }</h3>
+            <ul class="flex flex-row mb-2 gap-x-2">
+                {tags.map((tag) => (
+                    <li>
+                    <span
+                        class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                    >
+                        <tag.icon class="size-10" />
+                        {tag.name}
+                    </span>
+                    </li>
+                ))}
+            </ul>
+            <p class="text-lg mb-4 text-pretty">{ description }</p>
+            <img 
+                class="rounded shadow-2xl shadow-white/10"
+                src={ image }
+                alt={`Captura de pantalla del proyecto ${image}`}/>
+        </article>
+    ))
+}

@@ -1,0 +1,37 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+
+const EXPERIENCE = [
+{
+    date: "Actualmente...",
+    title: "Estudiante",
+    company: "UCASAL",
+    description:
+      "Actualmente estoy finalizando la carrera de Ingeniería en Informática.",
+    link: "https://www.ucasal.edu.ar/",
+  },
+  {
+    date: "Enero 2022 - Marzo 2023",
+    title: "Desarrollador RPA Junior",
+    company: "Visión y Acción S.R.L.",
+    description:
+      "Desarrollador RPA encargado de llevar a cabo diversas automatizaciones para Nissan Argentina, Nissan Brasil.",
+  },
+  {
+    date: "Diciembre 2021",
+    title: "Pasantía Borax Argentina S.A.",
+    company: "Borax Argentina S.A.",
+    description:
+      "Pasantía de la Práctica Profesiona Supervisada para poder obtener el título de Ing. en Informática.",
+  },
+]
+---
+<ol class="relative border-s border-gray-200 ml-3">
+    {
+        EXPERIENCE.map(experience => (
+            <li class="mb-10 ms-4">
+                <ExperienceItem {...experience} />
+            </li>
+        ))
+    }
+</ol>
