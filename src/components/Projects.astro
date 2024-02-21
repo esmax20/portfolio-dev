@@ -4,6 +4,9 @@ import GitHubIcon from "./icons/GitHub.astro";
 import TensorFlowIcon from "./icons/TensorFlow.astro";
 import LinkButton from "./LinkButton.astro";
 import LinkIcon from "./icons/Link.astro";
+import JavascriptIcon from "./icons/Javascript.astro"
+import ReactIcon from "./icons/React.astro"
+
 const TAGS = {
     PYTHON: {
         name: "Python",
@@ -15,8 +18,31 @@ const TAGS = {
         class: "bg-white text-black",
         icon: TensorFlowIcon,
     },
+    JAVASCRIPT: {
+        name: "JavaScript",
+        class: "bg-yellow text-black",
+        icon: JavascriptIcon,
+    },
+    REACT: {
+        name: "React",
+        class: "bg-white text-lightblue",
+        icon: ReactIcon,
+    },
 };
 const PROJECTS = [
+    {
+        title: "Datos de Países",
+        description: `Es un proyecto en el que se realizan peticiones http a la API 
+            https://studies.cs.helsinki.fi/restcountries/. Se escribe el país del cual se desea 
+            adquirir información y cuando la lista solo sea de un país se devuelve la 
+            información completa del mismo. Si la lista supera los 10 resultados de países 
+            entonces devuelve un mensaje de que hubieron demasiadas respuestas a la petición. 
+            Este trabajo corresponde a los ejercicios finales del curso Full Stack Open. https://fullstackopen.com/en/part2/adding_styles_to_react_app#exercises-2-18-2-20`,
+        link: "https://65d672f723e04913596b1232--mellow-bavarois-850d90.netlify.app/",
+        github: "https://github.com/esmax20/Data-for-Countries",
+        image: "data-for-countries.png",
+        tags: [TAGS.JAVASCRIPT, TAGS.REACT],
+    },
     {
         title: "Sistema Automatizado de Acceso a Estacionamiento",
         description: `Realizado como proyecto de grado para la carrera de 
